@@ -1,5 +1,5 @@
 #!groovy
-import static org.junit.Assert
+import static org.junit.Assert.*
 
 pipeline {
     agent any /*{

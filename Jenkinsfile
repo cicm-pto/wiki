@@ -11,8 +11,10 @@ pipeline {
     stages {
 
         stage('Initialization') {
-            echo datas.something
-            echo datas.el
+            steps {
+                echo datas.something
+                echo datas.el
+            }
         }
         stage('Build') { 
             steps {

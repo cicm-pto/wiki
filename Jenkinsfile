@@ -1,5 +1,5 @@
 #!groovy
-import static org.junit.Assert.*
+def datas = readYaml file: 'pipeline-config.yml', text: "something: 'Override'"
 
 pipeline {
     agent any /*{
@@ -11,7 +11,6 @@ pipeline {
     stages {
 
         stage('Initialization') {
-            def datas = readYaml file: 'pipeline-config.yml', text: "something: 'Override'"
             echo datas.something
             echo datas.el
         }

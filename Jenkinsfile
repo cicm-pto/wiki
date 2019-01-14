@@ -1,5 +1,5 @@
 #!groovy
-def datas = readYaml file: 'pipeline-config.yml', text: "something: 'Override'"
+def datas = readYaml file: './pipeline-config.yml', text: "something: 'Override'"
 
 pipeline {
     agent any /*{

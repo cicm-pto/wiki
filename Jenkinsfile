@@ -1,3 +1,6 @@
+#!groovy
+import static org.junit.Assert
+
 pipeline {
     agent any /*{
         docker {

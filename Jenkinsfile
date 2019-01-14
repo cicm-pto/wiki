@@ -11,8 +11,7 @@ pipeline {
 
         stage('Initialization') {
             steps {
-                def datas
-                script { datas = readYaml file: './pipeline-config.yml', text: "something: 'Override'"}
+                script {  datas = readYaml file: './pipeline-config.yml', text: "something: 'Override'"}
                 echo datas.something
                 echo datas.el
             }

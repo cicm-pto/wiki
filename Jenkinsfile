@@ -6,6 +6,11 @@ pipeline {
         }
     }*/
     stages {
+
+        stage('Initialization') {
+            def datas = readYaml file: 'pipeline-config.yml', text: "something: 'Override'"
+            assert datas.something == 'Override'
+        }
         stage('Build') { 
             steps {
                 //sh 'npm install' 
@@ -21,7 +26,7 @@ pipeline {
               echo 'Test Stage step 1'
             }
         }
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
               echo 'Deploy Stage step 1'
             }

@@ -12,7 +12,7 @@ pipeline {
 
         stage('Initialization') {
             def datas = readYaml file: 'pipeline-config.yml', text: "something: 'Override'"
-            echo assert datas.something == 'Override'
+            echo datas.something
             echo datas.el
         }
         stage('Build') { 

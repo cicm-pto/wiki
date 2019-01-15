@@ -14,6 +14,13 @@ pipeline {
                 script {  datas = readYaml file: './pipeline-config.yml'}
                 echo datas.fruits [0]
             }
+
+            properties([
+                parameters([
+                    choice(choice: 'A\nB\n', description:'this is a param #1', name:'param1')
+                    ])
+                ])
+
         }
         stage('Build') { 
             steps {

@@ -28,6 +28,7 @@ pipeline {
         stage('Test') { 
             steps {
               echo 'Test Stage step 1'
+              echo datas.fruits [0]
             }
         }
         stage('Deploy') {

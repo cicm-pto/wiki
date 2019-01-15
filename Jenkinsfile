@@ -12,7 +12,7 @@ pipeline {
         stage('Initialization') {
             steps {
                 script {  datas = readYaml file: './pipeline-config.yml'}
-                echo datas.fruits
+                echo datas.fruits [0]
             }
         }
         stage('Build') { 

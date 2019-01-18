@@ -23,7 +23,7 @@ node {
             echo 'Deploy Stage step 1'
         }
     }
-    catch (e) {
+    catch (AssertionError e) {
         echo 'here'
     } 
 }

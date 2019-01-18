@@ -1,7 +1,17 @@
 #!groovy
 
 node {
+
+            options {
+                skipDefaultCheckout
+            }
+
     stage('Initialization') {
+
+                    options {
+                
+                timestamps
+            }
 
         echo 'Reading from git'
     }

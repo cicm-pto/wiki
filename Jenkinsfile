@@ -24,5 +24,6 @@ node {
         }
     }
     catch (e) {
+        echo 'here'
     } 
 }

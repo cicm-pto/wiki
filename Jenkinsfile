@@ -24,6 +24,6 @@ node {
         }
     }
     catch (e) {
-        error (e.message)
+        echo e.message
     } 
 }

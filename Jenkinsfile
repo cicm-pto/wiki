@@ -1,34 +1,38 @@
 #!groovy
 
-pipeline {
-    agent any /*{
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
-    }*/
+node {
     stages {
-
         stage('Initialization') {
-            steps {
-                script {  datas = readYaml file: './pipeline-config.yml'}
-                echo datas.fruits [0]
+
+            options {
+                skipDefaultCheckout
+                timestamps
             }
 
-            properties([
-                parameters([
-                    choice(choice: 'A\nB\n', description:'this is a param #1', name:'param1')
-                    ])
-                ])
+            parameters {
+                text(name: 'DEPLOY_TEXT', defaultValue: 'One\nTwo\nThree\n', description: '')
+                choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+            }
 
+            try {
+
+                steps {
+                    echo "DEPLOY_TEXT: ${params.DEPLOY_TEXT}"
+                    echo "Choice: ${params.CHOICE}"
+
+                    script {  datas = readYaml file: './pipeline-config.yml'}
+                    echo datas.fruits [0]
+                }
+
+            }
+            catch (exc) {
+                echo 'Something failed, I should sound the klaxons!'
+            }
         }
+
         stage('Build') { 
             steps {
-                //sh 'npm install' 
               echo 'build stage step1'
-              
-              // do something
-              
               echo 'build stage step2'
             }
         }

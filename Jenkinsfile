@@ -4,7 +4,7 @@ node {
 
     stage('Initialization') {
 
-        def name = 'hal'
+        def name 
         assert name
         echo 'Reading from git'
     }

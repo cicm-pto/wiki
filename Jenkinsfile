@@ -25,6 +25,6 @@ node {
     }
     catch (AssertionError e) {
         currentBuild.result = 'ABORTED'
-        error (e.message)
+        echo "Build is now ABORTED ${e}"
     } 
 }

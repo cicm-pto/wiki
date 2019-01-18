@@ -24,6 +24,5 @@ node {
         }
     }
     catch (e) {
-        echo e
     } 
 }

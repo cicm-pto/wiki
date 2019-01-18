@@ -5,7 +5,7 @@ node {
     stage('Initialization') {
 
         def name 
-        assert name
+        assert name : 'Name should be defined'
         echo 'Reading from git'
     }
 

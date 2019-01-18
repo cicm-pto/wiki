@@ -3,7 +3,7 @@
 node {
     stage('Initialization') {
 
-        echo 'Something failed, I should sound the klaxons!'
+        echo 'Reading from git'
     }
 
     stage('Build') { 

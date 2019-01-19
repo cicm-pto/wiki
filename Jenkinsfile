@@ -5,7 +5,7 @@ node {
 
         properties([
             parameters([
-                String(defaultValue: 'nothing', name: 'TEST_VAR')
+                string(defaultValue: 'nothing', name: 'TEST_VAR')
             ])
         ])
         try {

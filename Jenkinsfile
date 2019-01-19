@@ -4,7 +4,7 @@ node {
     timestamps {
         try {
             stage('Initialization') {
-                echo Date.parse('MM/dd/yyyy','01/19/2019')
+                echo SimpleDateFormat.parse('MM/dd/yyyy','01/19/2019')
                 def name = "hal"
                 assert name : 'Name should be defined'
                 echo 'Reading from git'

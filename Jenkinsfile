@@ -3,6 +3,8 @@
         properties([
             parameters([
                 choice (choices:'Yes\nNo', description: "inovke", name: 'Invoke_Parameters'),
+
+                choice (choices:'Item1\nItem2\nItem3\nItem4\nItem5\nItem6\n', description: "inovke", name: 'Invoke_Parameters'),
                 string(defaultValue: 'nothing', name: 'TEST_VAR'),
                 booleanParam(defaulValue: false, name: 'Dev'),
                 booleanParam(defaulValue: false, name: 'Test'),

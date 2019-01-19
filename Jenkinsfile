@@ -1,8 +1,5 @@
 #!groovy
 
-node {
-    timestamps {
-
         properties([
             parameters([
                 choice (choices:'Yes\nNo', description: "inovke", name: Invoke_Parameters),
@@ -13,6 +10,9 @@ node {
                 booleanParam(defaulValue: false, name: 'Prod')
             ])
         ])
+
+node {
+    timestamps {
 
         stage("parameterizing") {
             steps {

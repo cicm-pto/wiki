@@ -7,7 +7,12 @@
                 booleanParam(defaulValue: false, name: 'Dev'),
                 booleanParam(defaulValue: false, name: 'Test'),
                 booleanParam(defaulValue: false, name: 'Stage'),
-                booleanParam(defaulValue: false, name: 'Prod')
+                booleanParam(defaulValue: false, name: 'Prod'),
+                string(defaultValue: 'nothing', name: 'TEST_VAR2'),
+                booleanParam(defaulValue: false, name: 'Dev2'),
+                booleanParam(defaulValue: false, name: 'Test2'),
+                booleanParam(defaulValue: false, name: 'Stage2'),
+                booleanParam(defaulValue: false, name: 'Prod2')
             ])
         ])
 

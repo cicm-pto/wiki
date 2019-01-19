@@ -2,6 +2,12 @@
 
 node {
     timestamps {
+
+        properties([
+            parameters([
+                String(defaultValue: 'nothing', name: 'TEST_VAR')
+            ])
+        ])
         try {
             stage('Initialization') {
                 echo SimpleDateFormat.parse('MM/dd/yyyy','01/19/2019')

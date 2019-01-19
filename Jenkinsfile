@@ -5,6 +5,7 @@ node {
 
         properties([
             parameters([
+                choice (choices:'Yes\nNo', description: "inovke", name: Invoke_Parameters)
                 string(defaultValue: 'nothing', name: 'TEST_VAR'),
                 booleanParam(defaulValue: false, name: 'Dev'),
                 booleanParam(defaulValue: false, name: 'Test'),
@@ -12,6 +13,18 @@ node {
                 booleanParam(defaulValue: false, name: 'Prod')
             ])
         ])
+
+        stage("parameterizing") {
+            steps {
+                script {
+                    if ("${params.Invoke_Parameters}" == "Yes") {
+                        currentBuild.result = 'ABORTED'
+                        error('DRY RUN COMPLETED. JOB PARAMETERIZED.')
+                    }
+                }
+            }
+        }
+
         try {
             stage('Initialization') {
                 def name = "hal"

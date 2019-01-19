@@ -5,7 +5,10 @@ node {
     try {
         stage('Initialization') {
 
-            def name 
+            log ("logging here")
+            exho "Exho is here"
+
+            def name = "hal"
             assert name : 'Name should be defined'
             echo 'Reading from git'
         }
@@ -25,6 +28,6 @@ node {
     }
     catch (AssertionError e) {
         currentBuild.result = 'ABORTED'
-        echo "Build is now ABORTED.\n${e.message}"
+        echo "Build is now ABORTED.\n${e.}"
     } 
 }

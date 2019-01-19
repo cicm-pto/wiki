@@ -5,7 +5,11 @@ node {
 
         properties([
             parameters([
-                string(defaultValue: 'nothing', name: 'TEST_VAR')
+                string(defaultValue: 'nothing', name: 'TEST_VAR'),
+                booleanParam(defaulValue: false, name: 'Dev'),
+                booleanParam(defaulValue: false, name: 'Test'),
+                booleanParam(defaulValue: false, name: 'Stage'),
+                booleanParam(defaulValue: false, name: 'Prod')
             ])
         ])
         try {

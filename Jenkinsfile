@@ -10,7 +10,6 @@ node {
         ])
         try {
             stage('Initialization') {
-                echo SimpleDateFormat.parse('MM/dd/yyyy','01/19/2019')
                 def name = "hal"
                 assert name : 'Name should be defined'
                 echo 'Reading from git'

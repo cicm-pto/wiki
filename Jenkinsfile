@@ -28,6 +28,6 @@ node {
     }
     catch (AssertionError e) {
         currentBuild.result = 'ABORTED'
-        echo "Build is now ABORTED.\n${e.}"
+        echo "Build is now ABORTED.\n${e}"
     } 
 }

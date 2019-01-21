@@ -20,6 +20,7 @@ node {
 
         stage("parameterizing") {
             steps {
+                echo items_list;
                 script {
                     echo Items
                     if ("${params.Invoke_Parameters}" == "Yes") {

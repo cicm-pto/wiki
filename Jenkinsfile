@@ -22,7 +22,6 @@ node {
 
                 echo items_list
                 script {
-                    echo Items
                     if ("${params.Invoke_Parameters}" == "Yes") {
                         currentBuild.result = 'ABORTED'
                         error('DRY RUN COMPLETED. JOB PARAMETERIZED.')

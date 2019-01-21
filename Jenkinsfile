@@ -20,7 +20,8 @@ node {
 
         stage("parameterizing") {
 
-                echo params.ENVIRONMENTS.split(',')
+                def envs = params.ENVIRONMENTS.split(',')
+                envs.each {echo it}
                 script {
                     if ("${params.Invoke_Parameters}" == "Yes") {
                         currentBuild.result = 'ABORTED'

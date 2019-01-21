@@ -19,8 +19,8 @@ node {
     timestamps {
 
         stage("parameterizing") {
-            steps {
-                echo items_list;
+
+                echo items_list
                 script {
                     echo Items
                     if ("${params.Invoke_Parameters}" == "Yes") {
@@ -28,7 +28,7 @@ node {
                         error('DRY RUN COMPLETED. JOB PARAMETERIZED.')
                     }
                 }
-            }
+
         }
 
         try {

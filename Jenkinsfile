@@ -3,8 +3,7 @@
         properties([
             parameters([
                 choice (choices:'Yes\nNo', description: "inovke", name: 'Invoke_Parameters'),
-
-                choice (choices:'xTrans\nItem1\nItem2\nItem3\nItem4\nItem5\nItem6\n', description: "description here", name: 'items_list'),
+                choice (choices:'xTrans\nItem1,Item2\nItem2\nItem3\nItem4\nItem5\nItem6\n', description: "description here", name: 'items_list'),
                 string(defaultValue: 'nothing', name: 'TEST_VAR'),
                 booleanParam(defaulValue: false, name: 'Dev'),
                 choice (choices:'xTrans\nENV1\nENV2\nenv3\nenv4\n', description: "descriptiuon there", name: 'ENVIRONMENTS'),
